@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "481827181627",
+    "firebase_url": "https://mytaller-9ecfe.firebaseio.com",
+    "project_id": "mytaller-9ecfe",
+    "storage_bucket": "mytaller-9ecfe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481827181627:android:a01630be63285eb183b81e",
+        "android_client_info": {
+          "package_name": "com.example.practicaexamen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481827181627-u4989ca1id7hu1uo7g9qaln1vsrt7shl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMdV6ADLFgIHH64FrxxyAs2b85LbuRjiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481827181627-u4989ca1id7hu1uo7g9qaln1vsrt7shl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481827181627:android:d6ceaeb7e69330b883b81e",
+        "android_client_info": {
+          "package_name": "com.example.taller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481827181627-u4989ca1id7hu1uo7g9qaln1vsrt7shl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMdV6ADLFgIHH64FrxxyAs2b85LbuRjiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481827181627-u4989ca1id7hu1uo7g9qaln1vsrt7shl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
