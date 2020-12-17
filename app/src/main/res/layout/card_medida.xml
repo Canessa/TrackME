@@ -41,11 +41,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/tvNombre"
+                android:text="@string/tvMes"
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/tvNombre"
+                android:id="@+id/tvMes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -62,11 +62,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/tvApellidos"
+                android:text="@string/tvPeso"
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/tvApellidos"
+                android:id="@+id/tvPeso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -83,11 +83,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/tvGenero"
+                android:text="@string/tvMM"
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/tvGenero"
+                android:id="@+id/tvMM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -104,11 +104,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/tvProvincia"
+                android:text="@string/tvMG"
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/tvProvincia"
+                android:id="@+id/tvMG"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />

@@ -27,7 +27,6 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     apply plugin: 'project-report'
     apply plugin: 'maven'
-    api 'com.google.android.material:material:1.1.0-alpha06'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation 'com.google.firebase:firebase-auth:19.3.1'
@@ -39,11 +38,15 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:19.2.0'
     implementation 'com.google.firebase:firebase-database:19.5.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    //Textoutput inicio
-    api 'com.google.android.material:material:1.1.0-alpha06'
-    //Textoupout fin
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //Textoutput
+    api 'com.google.android.material:material:1.1.0-alpha06'
+    //Graphs
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+    implementation 'com.jjoe64:graphview:4.2.2'
+
+
 
 }

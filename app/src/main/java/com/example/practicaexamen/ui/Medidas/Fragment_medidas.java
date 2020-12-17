@@ -1,4 +1,4 @@
-package com.example.practicaexamen.ui.Pelicula;
+package com.example.practicaexamen.ui.Medidas;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,28 +11,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.practicaexamen.ActivityPelicula;
-import com.example.practicaexamen.Gestion.PeliculasGestion;
+import com.example.practicaexamen.ActivityMedida;
+import com.example.practicaexamen.Gestion.MedidasGestion;
 import com.example.practicaexamen.R;
-import com.example.practicaexamen.adapter.PeliculaAdapter;
-import com.example.practicaexamen.model.Pelicula;
+import com.example.practicaexamen.adapter.MedidasAdapter;
+import com.example.practicaexamen.model.Medidas;
 
 import java.util.List;
 
-public class Fragment_pelicula extends Fragment {
+public class Fragment_medidas extends Fragment {
 
     //Los atributos para mostrar el recycler view
     private RecyclerView recyclerView;
-    private PeliculaAdapter peliculaAdapter;
+    private MedidasAdapter medidasAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
     //Para modificar en varios metodoso
-    private List<Pelicula> lista;
+    private List<Medidas> lista;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root =  inflater.inflate(R.layout.fragment_pelicula, container, false);
+        View root =  inflater.inflate(R.layout.fragment_medidas, container, false);
 
 
         recyclerView = root.findViewById(R.id.reciclador);
@@ -43,21 +43,21 @@ public class Fragment_pelicula extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
 
-        lista = PeliculasGestion.getPeliculas();
-        final List<Pelicula> listaFinal=lista;
-        peliculaAdapter = new PeliculaAdapter(lista);
-        peliculaAdapter.setListener(new View.OnClickListener() {
+        lista = MedidasGestion.getMedidas();
+        final List<Medidas> listaFinal=lista;
+        medidasAdapter = new MedidasAdapter(lista);
+        medidasAdapter.setListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position = recyclerView.getChildAdapterPosition(v);
-                Pelicula pelicula = lista.get(position);
-                Intent intent = new Intent(getContext(), ActivityPelicula.class);
+                Medidas medidas = lista.get(position);
+                Intent intent = new Intent(getContext(), ActivityMedida.class);
                 intent.putExtra("tipo",1); //parametro 1 modificar/ eliminar
-                intent.putExtra("Pelicula", pelicula);
+                intent.putExtra("Medidas", medidas);
                 startActivity(intent);
             }
         });
-        recyclerView.setAdapter(peliculaAdapter);
+        recyclerView.setAdapter(medidasAdapter);
 
         return root;
     }
@@ -65,9 +65,9 @@ public class Fragment_pelicula extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
-        lista = PeliculasGestion.getPeliculas();
-        peliculaAdapter.Actualiza(lista);
-        peliculaAdapter.notifyDataSetChanged();
+        lista = MedidasGestion.getMedidas();
+        medidasAdapter.Actualiza(lista);
+        medidasAdapter.notifyDataSetChanged();
     }
 
 

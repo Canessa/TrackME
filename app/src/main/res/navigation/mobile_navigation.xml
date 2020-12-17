@@ -6,6 +6,12 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.practicaexamen.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
         android:id="@+id/nav_home"
         android:name="com.example.practicaexamen.ui.home.HomeFragment"
         android:label="@string/menu_home"
@@ -15,9 +21,9 @@
 
     <fragment
         android:id="@+id/nav_Usuario"
-        android:name="com.example.practicaexamen.ui.Pelicula.Fragment_pelicula"
+        android:name="com.example.practicaexamen.ui.Medidas.Fragment_medidas"
         android:label="@string/menu_usuario"
-        tools:layout="@layout/fragment_pelicula" />
+        tools:layout="@layout/fragment_medidas" />
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.practicaexamen.ui.slideshow.SlideshowFragment"

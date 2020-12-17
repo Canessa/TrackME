@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.Menu;
 
 import com.example.practicaexamen.Data.AdminDB;
-import com.example.practicaexamen.Gestion.PeliculasGestion;
+import com.example.practicaexamen.Gestion.MedidasGestion;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
@@ -32,7 +32,7 @@ public class Principal extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),ActivityPelicula.class);
+                Intent intent = new Intent(getApplicationContext(), ActivityMedida.class);
                 intent.putExtra("tipo",2);
                 startActivity(intent);
             }
@@ -44,7 +44,7 @@ public class Principal extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home,
-                //R.id.nav_gallery,
+                R.id.nav_gallery,
                 R.id.nav_Usuario)
                 .setDrawerLayout(drawer)
                 .build();
@@ -52,8 +52,8 @@ public class Principal extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        AdminDB data = new AdminDB(getApplicationContext(),"base.db",null,2);
-        PeliculasGestion.init(data);
+        AdminDB data = new AdminDB(getApplicationContext(),"base.db",null,3);
+        MedidasGestion.init(data);
     }
 
     @Override
