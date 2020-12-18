@@ -1,5 +1,6 @@
 package com.example.practicaexamen.ui.gallery;
 
+import android.app.Notification;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.anychart.APIlib;
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
@@ -21,8 +23,12 @@ import com.anychart.enums.Anchor;
 import com.anychart.enums.HoverMode;
 import com.anychart.enums.Position;
 import com.anychart.enums.TooltipPositionMode;
+import com.anychart.graphics.vector.AnyColor;
+import com.anychart.graphics.vector.ColoredFill;
+import com.anychart.palettes.RangeColors;
 import com.example.practicaexamen.Data.AdminDB;
 import static com.example.practicaexamen.Gestion.MedidasGestion.getMasas;
+import static com.example.practicaexamen.Gestion.MedidasGestion.getObesidad;
 import static com.example.practicaexamen.Gestion.MedidasGestion.getPesos;
 import com.example.practicaexamen.R;
 
@@ -30,33 +36,15 @@ import java.util.ArrayList;
 
 public class GalleryFragment extends Fragment {
 
-    private static AdminDB data=null;  //Enlace con la base de datos fisica
-    private static SQLiteDatabase conexion=null;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
 
-       conexion=data.getReadableDatabase();
-       Cursor datos=conexion.rawQuery("select * from Fitness",
-                null);
-
         //Column Chart --- Pesos
-        AnyChartView anyChartView = root.findViewById(R.id.any_chart_view);
-        anyChartView.setProgressBar(root.findViewById(R.id.progress_bar));
-
-
+        final AnyChartView Barchart = root.findViewById(R.id.BarChart);
+        Barchart.setProgressBar(root.findViewById(R.id.progress_bar));
+        APIlib.getInstance().setActiveAnyChartView(Barchart);
         Cartesian cartesian = AnyChart.column();
-
-        /*ArrayList<DataEntry> listaPesos = new ArrayList<>();
-        while (datos.moveToNext()) {
-            listaPesos.add(
-                    new ValueDataEntry(
-                            datos.getString(1),
-                            ((int)datos.getDouble(2))
-                    ));
-        }*/
-
         Column column = cartesian.column(getPesos());
 
         column.tooltip()
@@ -79,30 +67,32 @@ public class GalleryFragment extends Fragment {
 
         cartesian.xAxis(0).title("Fechas");
         cartesian.yAxis(0).title("Peso (kg)");
-
-        anyChartView.setChart(cartesian);
+        RangeColors palette = RangeColors.instantiate();
+        palette.items("#d45b67", "#b01a29");
+        palette.count(10);
+        cartesian.palette(palette);
+        Barchart.setChart(cartesian);
 
         // Pie Chart --- Masas
-        Pie pie = AnyChart.pie();
-
-        /*ArrayList<DataEntry> Masas = new ArrayList<>();
-        while (datos.moveToLast()) {
-            Masas.add(
-                    new ValueDataEntry(
-                            "Masa Muscular",
-                            ((int)datos.getDouble(3))
-                    ));
-            Masas.add(
-                    new ValueDataEntry(
-                            "Masa Grasa",
-                            ((int)datos.getDouble(4))
-                    ));
-        }*/
-
+        final AnyChartView piechart = root.findViewById(R.id.PieChart);
+        APIlib.getInstance().setActiveAnyChartView(piechart);
+        final Pie pie = AnyChart.pie();
+        pie.title("Análisis Múscular");
         pie.data(getMasas());
-
-        AnyChartView piechart = (AnyChartView) root.findViewById(R.id.PieChart);
+        pie.animation(true);
+        pie.palette().items("#d45b67", "#b01a29");
         piechart.setChart(pie);
+
+        // Pie Chart --- Obesidad
+        final AnyChartView piechart2 = root.findViewById(R.id.PieChart2);
+        APIlib.getInstance().setActiveAnyChartView(piechart2);
+        final Pie pie2 = AnyChart.pie();
+        pie2.title("Análisis de Obesidad");
+        pie2.palette().items("#d45b67", "#b01a29");
+        pie2.data(getObesidad());
+        pie2.animation(true);
+        piechart2.setChart(pie2);
+
         return root;
     }
 }

@@ -6,21 +6,30 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Progreso" />
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/nav_medidas"
+            android:icon="@drawable/ic_menu_registros"
+            android:title="Registros" />
 
         <item
-            android:id="@+id/nav_Usuario"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Ver Peliculas" />
-        <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="CRUD Pelicula" />
+            android:icon="@drawable/ic_menu_agregar"
+            android:title="Agregar Registros" />
+
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_historico"
+            android:title="Historico Peso" />
+
+        <item
+            android:id="@+id/nav_masas"
+            android:icon="@drawable/ic_baseline_fitness_center_24"
+            android:title="Ejemplos de Rutinas" />
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_routine"
+            android:title="Rutina Personal" />
+
+
     </group>
 </menu>

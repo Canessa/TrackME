@@ -19,7 +19,7 @@
             android:layout_height="174dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="24dp"
-            android:src="@mipmap/logo" />
+            android:src="@mipmap/logo_foreground" />
 
         <!--  Email Label -->
         <com.google.android.material.textfield.TextInputLayout

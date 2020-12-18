@@ -138,25 +138,53 @@ public class MedidasGestion {
 
     public static ArrayList<DataEntry> getMasas(){
 
-
         conexion=data.getReadableDatabase();
+
         Cursor datos=conexion.rawQuery("select masamuscular,masagrasa from Fitness",
                 null);
 
+        int MM = 0;
+        int MG = 0;
         ArrayList<DataEntry> Masas = new ArrayList<>();
         while (datos.moveToLast()) {
-            Masas.add(
-                    new ValueDataEntry(
-                            "Masa Muscular",
-                            ((int)datos.getDouble(0))
-                    ));
-            Masas.add(
-                    new ValueDataEntry(
-                            "Masa Grasa",
-                            ((int)datos.getDouble(1))
-                    ));
+                MM= (int)datos.getDouble(0);
+                MG= (int)datos.getDouble(1);
+                break;
         }
+
+        Masas.add(
+                new ValueDataEntry( "Musculo Kg",MM)
+                );
+        Masas.add(
+                new ValueDataEntry("Grasa Kg",MG)
+                );
         conexion.close();
         return Masas;
+    }
+
+    public static ArrayList<DataEntry> getObesidad(){
+
+        conexion=data.getReadableDatabase();
+
+        Cursor datos=conexion.rawQuery("select imc,grasacoorporal from Fitness",
+                null);
+
+        int IMC = 0;
+        int GC = 0;
+        ArrayList<DataEntry> Obesidad = new ArrayList<>();
+        while (datos.moveToLast()) {
+            IMC= (int)datos.getDouble(0);
+            GC= (int)datos.getDouble(1);
+            break;
+        }
+
+        Obesidad.add(
+                new ValueDataEntry( "IMC",IMC)
+        );
+        Obesidad.add(
+                new ValueDataEntry("% Grasa",GC)
+        );
+        conexion.close();
+        return Obesidad;
     }
 }

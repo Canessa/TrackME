@@ -1,33 +1,38 @@
 <resources>
-    <string name="app_name">Examen</string>
+    <string name="app_name">TrackMe</string>
     <string name="tvCorreo">Correo</string>
     <string name="tvClave">Contraseña</string>
     <string name="title_activity_principal">Principal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Christopher Luna Canessa</string>
+    <string name="nav_header_subtitle">cluna40251@ufide.ac.cr</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Imagenes Peliculas</string>
-    <string name="tvUser">Imagen de Pelicula</string>
-    <string name="btCargar">Cargar</string>
+    <string name="menu_home">Rutinas Personales</string>
+    <string name="tvUser">Suba su rutina</string>
+    <string name="btCargar">Upload</string>
+    <string name="btBuscar">Buscar</string>
+    <string name="btSubir">Mostrar/Consultar</string>
 
 
     <string name="menu_gallery">Progreso Fitness</string>
     <string name="tvProgreso">Análisis de Composición Corporal</string>
 
+    <string name="menu_masas">Progreso Fitness</string>
+    <string name="tvMasas">Análisis Músculo-Grasa</string>
+    <string name="tvObesidad">Análisis de Obesidad</string>
 
-    <string name="menu_slideshow">BD</string>
+
+    <string name="menu_slideshow">Ingreso de Registros</string>
     <string name="btInserta">Insertar</string>
     <string name="btConsulta">Consultar</string>
     <string name="btModifica">Modificar</string>
     <string name="btElimina">Eliminar</string>
 
 
-
-    <string name="menu_usuario">Registro de Medidas</string>
+    <string name="menu_medidas">Registro de Medidas</string>
     <string name="tvId">ID</string>
     <string name="tvMes">Mes</string>
     <string name="tvPeso">Peso</string>

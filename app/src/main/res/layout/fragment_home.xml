@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -38,13 +39,13 @@
 
         <Button
             android:id="@+id/btBuscar"
-            android:layout_width="127dp"
+            android:layout_width="113dp"
             android:layout_height="wrap_content"
-            android:text="Buscar" />
+            android:text="@string/btBuscar" />
 
         <Button
             android:id="@+id/btCargar"
-            android:layout_width="157dp"
+            android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:text="@string/btCargar" />
 
@@ -53,7 +54,7 @@
             android:layout_width="192dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Firebase" />
+            android:text="@string/btSubir" />
     </LinearLayout>
 
     <LinearLayout
@@ -65,8 +66,8 @@
             android:id="@+id/imagen"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitCenter"
-            tools:src="@tools:sample/avatars" />
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/avatar_foreground" />
     </LinearLayout>
 
     <Button
